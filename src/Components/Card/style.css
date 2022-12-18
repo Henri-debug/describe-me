@@ -10,7 +10,19 @@
 
     border: 1px solid black;
     border-radius: 20px;
+
+    transition-property: width,height;
+    transition-duration: 1s;
 }
+
+#card-container:hover {
+    width: 400px;
+    height: 230px;
+
+    transition-property: width,height;
+    transition-duration: 0.5s;
+}
+
 
 #card-container p {
     text-align: center;

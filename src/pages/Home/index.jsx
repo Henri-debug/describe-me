@@ -27,6 +27,7 @@ export function Home() {
         </div>
 
         <div id='cards'>
+          
           <Card
             title='Show repos'
             desc="Search and visualize yours repos and friend's repos."

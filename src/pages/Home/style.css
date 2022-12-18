@@ -5,6 +5,9 @@
 }
 
 .container-navbar {
+    width: 100%;
+    position: fixed;
+
     display: flex;
     padding: 10px 70px;
     background-color: var(--light-white);
@@ -25,9 +28,11 @@
 
     list-style: none;
 }
-.container-navbar ul li a{
+
+.container-navbar ul li a {
     text-decoration: none;
 }
+
 #button-nav {
     font-size: 15px;
     color: var(--minimal-black);
@@ -69,6 +74,7 @@ main {
     flex-direction: column;
 
     margin: 0 180px;
+    margin-top: 100px;
 }
 
 
@@ -83,7 +89,7 @@ main {
 
 
 
-#apresentation img{
+#apresentation img {
     width: 380px;
     height: 380px;
 }
