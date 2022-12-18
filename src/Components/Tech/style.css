@@ -1,0 +1,19 @@
+#tech-container {
+    margin-top: 40px;
+    width: calc(100% - 70px);
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #F3F3F3;
+
+    border-radius: 20px;
+}
+
+#tech-container img{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
