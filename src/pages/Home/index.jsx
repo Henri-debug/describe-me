@@ -1,5 +1,5 @@
-import { Card } from '../../Components/Card'
-import { Tech } from '../../Components/Tech'
+import { Card } from '../../components/Card'
+import { Tech } from '../../components/Tech'
 import './style.css'
 
 
@@ -8,7 +8,7 @@ export function Home() {
     <div className='container'>
 
       <header className='container-navbar'>
-        <img src="src/assets/logov1.svg" alt="Logo v1" />
+        <img src="/logov1.svg" alt="Logo v1" />
         <nav>
           <ul>
             <li><a href="#" id='button-nav'>Lets's Search</a></li>
@@ -23,7 +23,7 @@ export function Home() {
             <p>Describe Me</p>
             <p>A public perfil visualizer for Github users</p>
           </div>
-          <img src="src/assets/logov2.svg" alt="Logo v2" />
+          <img src="/logov2.svg" alt="Logo v2" />
         </div>
 
         <div id='cards'>
@@ -44,13 +44,13 @@ export function Home() {
           />
         </div>
 
-        <img src="src/assets/mock.svg" alt="Mockup" />
+        <img src="/mock.svg" alt="Mockup" />
 
         <div id="techs">
           <p>Technologies</p>
 
-          <Tech img='src/assets/react-icon.svg'/>
-          <Tech img='src/assets/node-icon.svg'/>
+          <Tech img='/react-icon.svg'/>
+          <Tech img='/node-icon.svg'/>
         </div>
       </main>
 
