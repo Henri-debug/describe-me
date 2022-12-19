@@ -7,24 +7,20 @@ export function Home() {
     const [username, setUsername] = useState('');
     const [user, setUser] = useState({ name: '', avatar: '' });
 
-    useEffect(() => {
-        async function fetchUser() {
+    async function fetchUser() {
 
-            try {
-                const response = await fetch('https://api.github.com/users/' + username)
-                const { name, avatar_url } = await response.json()
+        try {
+            const response = await fetch('https://api.github.com/users/' + username)
+            const { name, avatar_url } = await response.json()
 
-                setUser({
-                    name: name,
-                    avatar: avatar_url
-                })
-            } catch (error) {
-                alert('Api fora do ar')
-            }
+            setUser({
+                name: name,
+                avatar: avatar_url
+            })
+        } catch (error) {
+            alert('Api fora do ar')
         }
-        fetchUser()
-
-    }, [])
+    }
 
     return (
         <div id='home-container'>
@@ -40,7 +36,7 @@ export function Home() {
                     onChange={ev => setUsername(ev.target.value)}
                 />
 
-                <Button title="Pesquisar"/>
+                <Button title="Pesquisar" functor={fetchUser}/>
             </div>
 
             <div className='search-results'>
