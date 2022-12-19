@@ -1,0 +1,24 @@
+.result-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 5rem;
+    background-color: var(--minimal-black);
+
+    margin-bottom: 20px;
+
+    gap: 20px;
+
+    color: white;
+
+    border-radius: 20px;
+}
+
+.result-container img {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 30px;
+}

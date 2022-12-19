@@ -1,0 +1,29 @@
+button {
+    margin-left: 20px;
+
+    border: 2px solid var(--minimal-black);
+    border-radius: 10px;
+    padding: 13px;
+
+    background-color: white;
+
+    font-family: 'Outfit', sans-serif;
+
+    transition-property: background-color;
+    transition-duration: 500ms;
+
+    height: 100%;
+
+    color: var(--minimal-black);
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: var(--minimal-black);
+
+    transition-property: background-color, color;
+    transition-duration: 500ms;
+    color: white;
+}
