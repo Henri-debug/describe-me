@@ -1,0 +1,75 @@
+#perfil {
+    width: 100%;
+    height: 100%;
+    
+    color: var(--minimal-black);
+
+    display: grid;
+
+    grid-template-areas:
+        "url url url url"
+        "name company created-at updated-at"
+        "bio bio bio bio"
+    ;  
+    
+    grid-template-rows: 1fr 1fr 5fr;
+    gap: 10px;
+}
+
+.perfil-div {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--light-white);
+}
+
+#perfil-url{
+    
+    text-align: center;
+
+    grid-area: url;
+
+    border-radius: 20px 20px 0 0;
+}
+
+#perfil-name{
+   
+    text-align: center;
+
+    grid-area: name;
+    
+}
+
+#perfil-company{
+
+    text-align: center;
+
+    grid-area: company;
+}
+
+#perfil-created-at{
+
+    text-align: center;
+
+    grid-area: created-at;
+}
+
+#perfil-updated-at{
+
+    text-align: center;
+
+    grid-area: updated-at;
+}
+
+#perfil-bio{
+
+    text-align: center;
+
+    grid-area: bio;
+
+    border-radius: 0 0 20px 20px;
+}
+
+.no-data{
+    color: lightgrey;
+}

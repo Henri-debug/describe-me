@@ -61,3 +61,15 @@
     padding: 30px;
 
 }
+
+.search-results img {
+    width: 130px;
+    height: 130px;
+    border-radius: 70px;
+
+    margin-bottom: 20px;
+}
+
+.search-results h3 {
+    padding-bottom: 20px;
+}

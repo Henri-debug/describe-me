@@ -2,23 +2,39 @@ import { Result } from '../../components/Result';
 import { Button } from '../../components/Button'
 import { useState, useEffect } from 'react'
 import './style.css'
+import { Perfil } from '../../components/Perfil';
 
 export function Home() {
     const [username, setUsername] = useState('');
-    const [user, setUser] = useState({ name: '', avatar: '' });
+    const [user, setUser] = useState({ 
+        name: '', 
+        avatar: '',
+        username: '',
+        perfil_link:'',
+        company:'',
+        created_at:'',
+        updated_at:'',
+        bio: ''
+    });
 
     async function fetchUser() {
 
         try {
             const response = await fetch('https://api.github.com/users/' + username)
-            const { name, avatar_url } = await response.json()
+            const { name, avatar_url,login,html_url,company,created_at,updated_at,bio } = await response.json()
 
             setUser({
                 name: name,
-                avatar: avatar_url
+                avatar: avatar_url,
+                username:login,
+                perfil_link: html_url,
+                company,
+                created_at,
+                updated_at,
+                bio
             })
         } catch (error) {
-            alert('Api fora do ar')
+            console.log(error)
         }
     }
 
@@ -40,7 +56,16 @@ export function Home() {
             </div>
 
             <div className='search-results'>
-                <Result name={user.name || 'Unnamed'} img={user.avatar || 'Nothing'} />
+                <img src={user.avatar} alt="" />
+                <h3>{user.username || 'Username'}</h3>
+                <Perfil
+                    url={user.perfil_link}
+                    name={user.name}
+                    company={user.company}
+                    created_at={user.created_at}
+                    updated_at={user.updated_at}
+                    bio={user.bio}
+                />
             </div>
         </div>
     );
