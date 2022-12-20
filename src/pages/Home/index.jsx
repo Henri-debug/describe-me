@@ -18,6 +18,11 @@ export function Home() {
     });
     const [showLoading, setShowLoading] = useState(false)
 
+    function saveUser(){
+        localStorage.setItem('user', JSON.stringify(user))
+    }
+
+
     async function fetchUser() {
         setShowLoading(true)
         try {
@@ -41,6 +46,10 @@ export function Home() {
             setShowLoading(false)
         }
     }
+
+    useEffect(() => {
+        saveUser()
+    }, [user])
 
     return (
         <div id='home-container'>
@@ -73,7 +82,7 @@ export function Home() {
 
                 { (user.created_at == '' || user.created_at == null )  ? '' : <Button title='This is my perfil !'/>  }
             </div>
-
+            
             {showLoading && <Loading />}
         </div>
     );
