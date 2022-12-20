@@ -3,6 +3,7 @@ import { Button } from '../../components/Button'
 import { useState, useEffect } from 'react'
 import './style.css'
 import { Perfil } from '../../components/Perfil';
+import { Loading } from '../../components/Loading';
 
 export function Home() {
     const [username, setUsername] = useState('');
@@ -16,9 +17,10 @@ export function Home() {
         updated_at:'',
         bio: ''
     });
+    const [showLoading, setShowLoading] = useState(false)
 
     async function fetchUser() {
-
+        setShowLoading(true)
         try {
             const response = await fetch('https://api.github.com/users/' + username)
             const { name, avatar_url,login,html_url,company,created_at,updated_at,bio } = await response.json()
@@ -33,6 +35,8 @@ export function Home() {
                 updated_at,
                 bio
             })
+
+        setShowLoading(false)
         } catch (error) {
             console.log(error)
         }
@@ -67,6 +71,8 @@ export function Home() {
                     bio={user.bio}
                 />
             </div>
+
+            { showLoading && <Loading />}
         </div>
     );
 }
