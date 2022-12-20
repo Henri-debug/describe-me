@@ -71,7 +71,7 @@ export function Home() {
                     bio={user.bio}
                 />
 
-                { user.created_at == null ? '' : <Button title='This is my perfil !'/>  }
+                { (user.created_at == '' || user.created_at == null )  ? '' : <Button title='This is my perfil !'/>  }
             </div>
 
             {showLoading && <Loading />}
