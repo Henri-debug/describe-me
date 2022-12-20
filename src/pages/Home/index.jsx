@@ -4,6 +4,7 @@ import './style.css'
 import { Perfil } from '../../components/Perfil';
 import { Loading } from '../../components/Loading';
 import { redirect } from 'react-router-dom';
+import { Search } from '../../components/Search';
 
 export function Home() {
     const [username, setUsername] = useState('');
@@ -57,7 +58,7 @@ export function Home() {
             <h2>Slow Downn !!!</h2>
             <p>Search your Github Account (By Name) !!</p>
 
-            <div className='search-box'>
+            {/* <div className='search-box'>
                 <img src="/search-icon.svg" alt="search-icon" />
                 <input
                     type="text"
@@ -67,7 +68,8 @@ export function Home() {
                 />
 
                 <Button title="Pesquisar" functor={fetchUser} />
-            </div>
+            </div> */}
+            <Search function={fetchUser} onChange={ev => setUsername(ev.target.value)}/>
 
             <div className='search-results'>
                 <img src={user.avatar} alt="" />
