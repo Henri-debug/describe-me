@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import './style.css'
 import { Perfil } from '../../components/Perfil';
 import { Loading } from '../../components/Loading';
+import { redirect } from 'react-router-dom';
 
 export function Home() {
     const [username, setUsername] = useState('');
@@ -21,7 +22,6 @@ export function Home() {
     function saveUser(){
         localStorage.setItem('user', JSON.stringify(user))
     }
-
 
     async function fetchUser() {
         setShowLoading(true)
@@ -45,6 +45,7 @@ export function Home() {
         } finally {
             setShowLoading(false)
         }
+
     }
 
     useEffect(() => {
@@ -80,7 +81,8 @@ export function Home() {
                     bio={user.bio}
                 />
 
-                { (user.created_at == '' || user.created_at == null )  ? '' : <Button title='This is my perfil !'/>  }
+                { (user.created_at == '' || user.created_at == null )  ? '' : <Button functor={() => location.href = '/describe'} title='This is my perfil !'/>  }
+                
             </div>
             
             {showLoading && <Loading />}

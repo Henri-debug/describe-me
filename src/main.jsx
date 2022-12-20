@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Describe } from './pages/Describe'
 import { Home } from './pages/Home'
 import {Landing} from './pages/Landing'
 import './styles/global.css'
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: '/home',
     element: <Home />
+  },
+  {
+    path: '/describe',
+    element: <Describe />
   }
 ])
 

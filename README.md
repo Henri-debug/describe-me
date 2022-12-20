@@ -9,3 +9,4 @@
 - Animações básicas com transition
 - Uso de props
 - Uso de Nullish Coalescing Operator
+- Uso de Local Storage
