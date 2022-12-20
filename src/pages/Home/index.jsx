@@ -1,4 +1,3 @@
-import { Result } from '../../components/Result';
 import { Button } from '../../components/Button'
 import { useState, useEffect } from 'react'
 import './style.css'
@@ -7,14 +6,14 @@ import { Loading } from '../../components/Loading';
 
 export function Home() {
     const [username, setUsername] = useState('');
-    const [user, setUser] = useState({ 
-        name: '', 
+    const [user, setUser] = useState({
+        name: '',
         avatar: '',
         username: '',
-        perfil_link:'',
-        company:'',
-        created_at:'',
-        updated_at:'',
+        perfil_link: '',
+        company: '',
+        created_at: '',
+        updated_at: '',
         bio: ''
     });
     const [showLoading, setShowLoading] = useState(false)
@@ -23,12 +22,12 @@ export function Home() {
         setShowLoading(true)
         try {
             const response = await fetch('https://api.github.com/users/' + username)
-            const { name, avatar_url,login,html_url,company,created_at,updated_at,bio } = await response.json()
+            const { name, avatar_url, login, html_url, company, created_at, updated_at, bio } = await response.json()
 
             setUser({
                 name: name,
                 avatar: avatar_url,
-                username:login,
+                username: login,
                 perfil_link: html_url,
                 company,
                 created_at,
@@ -57,7 +56,7 @@ export function Home() {
                     onChange={ev => setUsername(ev.target.value)}
                 />
 
-                <Button title="Pesquisar" functor={fetchUser}/>
+                <Button title="Pesquisar" functor={fetchUser} />
             </div>
 
             <div className='search-results'>
@@ -71,9 +70,11 @@ export function Home() {
                     updated_at={user.updated_at}
                     bio={user.bio}
                 />
+
+                { user.created_at == null ? '' : <Button title='This is my perfil !'/>  }
             </div>
 
-            { showLoading && <Loading />}
+            {showLoading && <Loading />}
         </div>
     );
 }
