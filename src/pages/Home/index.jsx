@@ -35,10 +35,11 @@ export function Home() {
                 updated_at,
                 bio
             })
-
-        setShowLoading(false)
         } catch (error) {
             console.log(error)
+            alert('An error ocurred, try again.')
+        } finally {
+            setShowLoading(false)
         }
     }
 

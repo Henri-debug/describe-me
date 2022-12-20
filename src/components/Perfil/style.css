@@ -73,3 +73,10 @@
 .no-data{
     color: lightgrey;
 }
+
+
+.centralized {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
