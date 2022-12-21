@@ -8,7 +8,7 @@ export function Search(props) {
                 <input
                     type="text"
                     id='input-search'
-                    placeholder='Github Username'
+                    placeholder={props.placeholder}
                     onChange={props.onChange}
                 />
 

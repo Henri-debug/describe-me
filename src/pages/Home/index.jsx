@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react'
 import './style.css'
 import { Perfil } from '../../components/Perfil';
 import { Loading } from '../../components/Loading';
-import { redirect } from 'react-router-dom';
 import { Search } from '../../components/Search';
+import { useNavigate } from 'react-router-dom';
 
 export function Home() {
+    const navigate = useNavigate()
     const [username, setUsername] = useState('');
     const [user, setUser] = useState({
         name: '',
@@ -69,7 +70,7 @@ export function Home() {
 
                 <Button title="Pesquisar" functor={fetchUser} />
             </div> */}
-            <Search function={fetchUser} onChange={ev => setUsername(ev.target.value)}/>
+            <Search placeholder='Github Username' function={fetchUser} onChange={ev => setUsername(ev.target.value)}/>
 
             <div className='search-results'>
                 <img src={user.avatar} alt="" />
@@ -83,7 +84,7 @@ export function Home() {
                     bio={user.bio}
                 />
 
-                { (user.created_at == '' || user.created_at == null )  ? '' : <Button functor={() => location.href = '/describe'} title='This is my perfil !'/>  }
+                { (user.created_at == '' || user.created_at == null )  ? '' : <Button functor={() => navigate('/describe')} title='This is my perfil !'/>  }
                 
             </div>
             
