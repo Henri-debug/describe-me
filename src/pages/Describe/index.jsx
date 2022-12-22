@@ -4,7 +4,11 @@ import { Search } from '../../components/Search'
 import './style.css'
 
 export function Describe() {
-    const [repos, setRepos] = useState([])
+    const [repos, setRepos] = useState([{
+        name: '',
+        language: '',
+        description: ''
+    }])
     const [user, setUser] = useState({
         name: '',
         avatar: '',
@@ -17,16 +21,26 @@ export function Describe() {
     })
 
     async function getRepos() {
-        const response = await fetch('https://api.github.com/users/'+user.username+'/repos')
+        const response = await fetch('https://api.github.com/users/' + user.username + '/repos')
         const data = await response.json()
-        console.log(data)
+        for (let i in data) {
+            const {
+                name,
+                language,
+                description
+            } = data[i]
 
-        //Todo
-        // Fazer isso funcionar
+            console.log(language)
+            setRepos((repos) => [...repos, {
+                name,
+                language,
+                description
+            }])
+        }
     }
 
     useEffect(() => {
-        const {name,avatar,username,perfil_link,company,created_at,updated_at,bio} = JSON.parse(localStorage.getItem('user'))
+        const { name, avatar, username, perfil_link, company, created_at, updated_at, bio } = JSON.parse(localStorage.getItem('user'))
         setUser({
             name,
             avatar,
@@ -37,18 +51,40 @@ export function Describe() {
             updated_at,
             bio
         })
+
+        getRepos()
     }, [user.name])
 
     return (
         <div id='describe-container'>
 
-            <Search placeholder='Repository Name' function={getRepos}/>
+            <div id='describe-nav'>
+                <img src="/logov1.svg" alt="Logo v1" />
+                
+                <div className='perfil-link'>
+                    <a href="">
+                        My Github
+                        <img src={user.avatar} alt="" />
+                    </a>
+                </div>
+                
+            </div>
+
+
+            <div id='search'>
+                <Search placeholder='Repository Name' function={() => { console.log(repos) }} />
+            </div>
+
 
             <div id='repositories'>
                 <h2>Repositories</h2>
 
                 <div id='repos-results'>
-                    <Repository />
+                    {
+                        repos.map(
+                            repo => (repo.name == null || repo.name == '') ? '' : <Repository name={repo.name} /> 
+                        )
+                    }
 
                 </div>
             </div>

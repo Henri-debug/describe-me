@@ -1,6 +1,5 @@
 #describe-container {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 
@@ -27,6 +26,7 @@ h2{
     background-color: #F3F3F3;
 
     width: 100%;
+
     margin-top: 20px;
     border-radius: 10px;
 
@@ -36,4 +36,39 @@ h2{
     flex-direction: column;
 
     padding: 30px;
+}
+
+#search {
+    width: 100%;
+    margin-top: 100px;
+
+}
+
+#describe-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 10px 70px;
+
+    background-color: var(--light-white);
+}
+
+#describe-nav img:last-child{
+    border-radius: 50%;
+}
+
+#describe-nav img {
+    width: 50px;
+    height: 50px;
+}
+
+.perfil-link a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: var(--minimal-black);
 }

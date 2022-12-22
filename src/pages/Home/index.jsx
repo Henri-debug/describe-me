@@ -59,17 +59,6 @@ export function Home() {
             <h2>Slow Downn !!!</h2>
             <p>Search your Github Account (By Name) !!</p>
 
-            {/* <div className='search-box'>
-                <img src="/search-icon.svg" alt="search-icon" />
-                <input
-                    type="text"
-                    id='input-search'
-                    placeholder='Github Username'
-                    onChange={ev => setUsername(ev.target.value)}
-                />
-
-                <Button title="Pesquisar" functor={fetchUser} />
-            </div> */}
             <Search placeholder='Github Username' function={fetchUser} onChange={ev => setUsername(ev.target.value)}/>
 
             <div className='search-results'>
