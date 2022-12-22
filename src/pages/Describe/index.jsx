@@ -7,7 +7,8 @@ export function Describe() {
     const [repos, setRepos] = useState([{
         name: '',
         language: '',
-        description: ''
+        description: '',
+        svn_url: ''
     }])
     const [user, setUser] = useState({
         name: '',
@@ -27,14 +28,15 @@ export function Describe() {
             const {
                 name,
                 language,
-                description
+                description,
+                svn_url
             } = data[i]
 
-            console.log(language)
             setRepos((repos) => [...repos, {
                 name,
                 language,
-                description
+                description,
+                svn_url
             }])
         }
     }
@@ -82,7 +84,7 @@ export function Describe() {
                 <div id='repos-results'>
                     {
                         repos.map(
-                            repo => (repo.name == null || repo.name == '') ? '' : <Repository name={repo.name} /> 
+                            repo => (repo.name == null || repo.name == '') ? '' : <Repository key={repo.svn_url} name={repo.name} src={repo.svn_url}/> 
                         )
                     }
 
