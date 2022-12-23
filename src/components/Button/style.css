@@ -1,5 +1,4 @@
 button {
-    margin-left: 20px;
 
     border: 2px solid var(--minimal-black);
     border-radius: 10px;
@@ -12,7 +11,7 @@ button {
     transition-property: background-color;
     transition-duration: 500ms;
 
-    height: 100%;
+    
 
     color: var(--minimal-black);
 

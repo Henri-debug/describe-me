@@ -1,7 +1,7 @@
 import './style.css'
 import { Perfil } from '../../components/Perfil';
 import { useEffect, useState } from 'react';
-
+import { Button } from '../../components/Button'
 
 
 export function Github() {
@@ -46,7 +46,12 @@ export function Github() {
           updated_at={user.updated_at}
           bio={user.bio}
         />
+
       </div>
+      <div id='buttons'>
+        <Button title='Download' />
+      </div>
+
     </div>
   )
 }
