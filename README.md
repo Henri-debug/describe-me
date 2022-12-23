@@ -6,6 +6,10 @@
 
 Describe me é um projeto pessoal que consiste na ideia de ter um lugar para ver suas informações pessoais, com um flow simples e minimalista
 
+## Branches
+- Master => Contém os arquivos mais estáveis
+- Development => Contém os arquivos mais atualizados e com mais funcionalidades, porem em teste
+
 ## Instalação
 
 O projeto têm uma build em produção na vercel com a ultima versão atualizada dos repositórios master, então caso não deseja instalar, pode testar usando o link da [vercel](https://describe-me-iota.vercel.app/)
