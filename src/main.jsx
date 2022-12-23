@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Describe } from './pages/Describe'
 import { Home } from './pages/Home'
 import {Landing} from './pages/Landing'
+import { Github } from './pages/MyGithub'
 import './styles/global.css'
 
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: '/describe',
     element: <Describe />
+  },
+  {
+    path: '/github-perfil',
+    element: <Github />
   }
 ])
 

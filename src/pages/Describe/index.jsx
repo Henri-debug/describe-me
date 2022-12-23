@@ -64,7 +64,7 @@ export function Describe() {
                 <img src="/logov1.svg" alt="Logo v1" />
                 
                 <div className='perfil-link'>
-                    <a href="">
+                    <a href="/github-perfil">
                         My Github
                         <img src={user.avatar} alt="" />
                     </a>
