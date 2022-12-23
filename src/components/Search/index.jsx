@@ -11,7 +11,6 @@ export function Search(props) {
                     placeholder={props.placeholder}
                     onChange={props.onChange}
                 />
-
                 <Button title="Pesquisar" functor={props.function} />
         </div>
     )
