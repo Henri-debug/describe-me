@@ -1,0 +1,42 @@
+#github-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100w;
+    height: 100vh;
+
+    flex-direction: column;
+}
+
+#github-perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+#github-stats {
+    background-color: #F3F3F3;
+
+    width: 80%;
+    height: 60%;
+
+    border-radius: 20px;
+
+    padding: 20px;
+}
+
+#github-perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#buttons {
+    width: 80%;
+    margin-top: 20px;
+    
+}
